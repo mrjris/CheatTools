@@ -34,10 +34,10 @@
             this.btnExStart = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cbxExFileLength = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbxExX = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cbxExBlockSize = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtExBlockSize = new System.Windows.Forms.TextBox();
@@ -52,9 +52,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtFileLength = new System.Windows.Forms.TextBox();
             this.txtBlocks = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbxFileLength = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxBlockSize = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.History = new System.Windows.Forms.ListView();
@@ -88,10 +88,10 @@
             this.groupBox4.Controls.Add(this.btnExStart);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.textBox1);
-            this.groupBox4.Controls.Add(this.comboBox4);
+            this.groupBox4.Controls.Add(this.cbxExFileLength);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.cbxExX);
-            this.groupBox4.Controls.Add(this.comboBox3);
+            this.groupBox4.Controls.Add(this.cbxExBlockSize);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.txtExBlockSize);
@@ -134,19 +134,19 @@
             this.textBox1.Text = "2";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // comboBox4
+            // cbxExFileLength
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.cbxExFileLength.FormattingEnabled = true;
+            this.cbxExFileLength.Items.AddRange(new object[] {
             "B",
             "KB",
             "MB"});
-            this.comboBox4.Location = new System.Drawing.Point(125, 50);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(53, 21);
-            this.comboBox4.TabIndex = 2;
-            this.comboBox4.TabStop = false;
-            this.comboBox4.Text = "MB";
+            this.cbxExFileLength.Location = new System.Drawing.Point(125, 50);
+            this.cbxExFileLength.Name = "cbxExFileLength";
+            this.cbxExFileLength.Size = new System.Drawing.Size(53, 21);
+            this.cbxExFileLength.TabIndex = 2;
+            this.cbxExFileLength.TabStop = false;
+            this.cbxExFileLength.Text = "MB";
             // 
             // label5
             // 
@@ -172,19 +172,19 @@
             this.cbxExX.TabStop = false;
             this.cbxExX.Text = "MB";
             // 
-            // comboBox3
+            // cbxExBlockSize
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.cbxExBlockSize.FormattingEnabled = true;
+            this.cbxExBlockSize.Items.AddRange(new object[] {
             "B",
             "KB",
             "MB"});
-            this.comboBox3.Location = new System.Drawing.Point(125, 16);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(53, 21);
-            this.comboBox3.TabIndex = 2;
-            this.comboBox3.TabStop = false;
-            this.comboBox3.Text = "KB";
+            this.cbxExBlockSize.Location = new System.Drawing.Point(125, 16);
+            this.cbxExBlockSize.Name = "cbxExBlockSize";
+            this.cbxExBlockSize.Size = new System.Drawing.Size(53, 21);
+            this.cbxExBlockSize.TabIndex = 2;
+            this.cbxExBlockSize.TabStop = false;
+            this.cbxExBlockSize.Text = "KB";
             // 
             // label6
             // 
@@ -245,9 +245,9 @@
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.txtFileLength);
             this.groupBox3.Controls.Add(this.txtBlocks);
-            this.groupBox3.Controls.Add(this.comboBox2);
+            this.groupBox3.Controls.Add(this.cbxFileLength);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.cbxBlockSize);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox3.Location = new System.Drawing.Point(3, 16);
@@ -342,19 +342,19 @@
             this.txtBlocks.TabIndex = 0;
             this.toolTip1.SetToolTip(this.txtBlocks, "Blocks = File Length / Block size");
             // 
-            // comboBox2
+            // cbxFileLength
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbxFileLength.FormattingEnabled = true;
+            this.cbxFileLength.Items.AddRange(new object[] {
             "B",
             "KB",
             "MB"});
-            this.comboBox2.Location = new System.Drawing.Point(125, 50);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(53, 21);
-            this.comboBox2.TabIndex = 2;
-            this.comboBox2.TabStop = false;
-            this.comboBox2.Text = "MB";
+            this.cbxFileLength.Location = new System.Drawing.Point(125, 50);
+            this.cbxFileLength.Name = "cbxFileLength";
+            this.cbxFileLength.Size = new System.Drawing.Size(53, 21);
+            this.cbxFileLength.TabIndex = 2;
+            this.cbxFileLength.TabStop = false;
+            this.cbxFileLength.Text = "MB";
             // 
             // label2
             // 
@@ -365,19 +365,19 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "File length";
             // 
-            // comboBox1
+            // cbxBlockSize
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbxBlockSize.FormattingEnabled = true;
+            this.cbxBlockSize.Items.AddRange(new object[] {
             "B",
             "KB",
             "MB"});
-            this.comboBox1.Location = new System.Drawing.Point(125, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(53, 21);
-            this.comboBox1.TabIndex = 2;
-            this.comboBox1.TabStop = false;
-            this.comboBox1.Text = "KB";
+            this.cbxBlockSize.Location = new System.Drawing.Point(125, 16);
+            this.cbxBlockSize.Name = "cbxBlockSize";
+            this.cbxBlockSize.Size = new System.Drawing.Size(53, 21);
+            this.cbxBlockSize.TabIndex = 2;
+            this.cbxBlockSize.TabStop = false;
+            this.cbxBlockSize.Text = "KB";
             // 
             // label3
             // 
@@ -469,8 +469,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListView History;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxFileLength;
+        private System.Windows.Forms.ComboBox cbxBlockSize;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -486,10 +486,10 @@
         private System.Windows.Forms.Button btnExStart;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cbxExFileLength;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbxExX;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cbxExBlockSize;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtExBlockSize;

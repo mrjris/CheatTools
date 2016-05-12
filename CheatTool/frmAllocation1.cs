@@ -27,8 +27,8 @@ namespace CheatTool
             hash.Add("KB", 1024);
             hash.Add("MB", 1024 * 1024);
             hash.Add("GB", 1024 * 1024 * 1024);
-            long FileLength = Convert.ToInt64(txtFileLength.Text) * (int)hash[comboBox2.Text];
-            long BlockSize = Convert.ToInt64(txtBlockSize.Text) * (int)hash[comboBox1.Text];
+            long FileLength = Convert.ToInt64(txtFileLength.Text) * (int)hash[cbxFileLength.Text];
+            long BlockSize = Convert.ToInt64(txtBlockSize.Text) * (int)hash[cbxBlockSize.Text];
             long blocks = FileLength / BlockSize;
 
             txtBlocks.Text = blocks.ToString();
@@ -39,8 +39,8 @@ namespace CheatTool
         {
             if (txtFileLength.Text != "" && txtBlockSize.Text != "")
             {
-                long FileLength = Convert.ToInt64(txtFileLength.Text) * (int)hash[comboBox2.Text];
-                long BlockSize = Convert.ToInt64(txtBlockSize.Text) * (int)hash[comboBox1.Text];
+                long FileLength = Convert.ToInt64(txtFileLength.Text) * (int)hash[cbxFileLength.Text];
+                long BlockSize = Convert.ToInt64(txtBlockSize.Text) * (int)hash[cbxBlockSize.Text];
                 long blocks = FileLength / BlockSize;
 
                 txtBlocks.Text = blocks.ToString();
@@ -51,8 +51,8 @@ namespace CheatTool
         {
             if (txtFileLength.Text != "" && txtBlockSize.Text != "")
             {
-                long FileLength = Convert.ToInt64(txtFileLength.Text) * (int)hash[comboBox2.Text];
-                long BlockSize = Convert.ToInt64(txtBlockSize.Text) * (int)hash[comboBox1.Text];
+                long FileLength = Convert.ToInt64(txtFileLength.Text) * (int)hash[cbxFileLength.Text];
+                long BlockSize = Convert.ToInt64(txtBlockSize.Text) * (int)hash[cbxBlockSize.Text];
                 long blocks = FileLength / BlockSize;
 
                 txtBlocks.Text = blocks.ToString();
@@ -65,9 +65,9 @@ namespace CheatTool
             long x = 0;
             try
             {
-                FileLength = Convert.ToInt32(txtFileLength.Text) * (int)hash[comboBox2.Text];
-                BlockSize = Convert.ToInt32(txtBlockSize.Text) * (int)hash[comboBox1.Text];
-                x = (long)(Convert.ToInt64(txtX.Text) * (int)hash[cbxX.Text]);
+                FileLength = (long)(Convert.ToDouble(txtFileLength.Text) * (int)hash[cbxFileLength.Text]);
+                BlockSize = (long)(Convert.ToDouble(txtBlockSize.Text) * (int)hash[cbxBlockSize.Text]);
+                x = (long)(Convert.ToDouble(txtX.Text) * (int)hash[cbxX.Text]);
             }
             catch
             {
@@ -85,7 +85,8 @@ namespace CheatTool
                 long offset = x % BlockSize;
                 long block = x / BlockSize;
                 string location = "(" + block.ToString() + "," + offset.ToString() + ")";
-                string[] result = { x.ToString(), BlockSize.ToString(), "N/A", block.ToString(), offset.ToString(), location };
+                string[] result = { txtX.Text + cbxX.Text, txtBlockSize.Text + cbxBlockSize.Text,
+                    "N/A", block.ToString(), offset.ToString(), location };
                 ListViewItem item = new ListViewItem(result);
                 History.Items.Add(item);
             } 
@@ -100,9 +101,9 @@ namespace CheatTool
             int n = 0;
             try
             {
-                FileLength = Convert.ToInt64(txtExFileLength.Text) * (int)hash[comboBox4.Text];
-                BlockSize = Convert.ToInt32(txtExBlockSize.Text) * (int)hash[comboBox3.Text];
-                x = (long)(Convert.ToInt64(textBox1.Text) * (int)hash[cbxExX.Text]);
+                FileLength = (long)(Convert.ToDouble(txtExFileLength.Text) * (int)hash[cbxExFileLength.Text]);
+                BlockSize = (long)(Convert.ToDouble(txtExBlockSize.Text) * (int)hash[cbxExBlockSize.Text]);
+                x = (long)(Convert.ToDouble(textBox1.Text) * (int)hash[cbxExX.Text]);
                 n = Convert.ToInt32(txtExCount.Text);          
             }
             catch
@@ -127,7 +128,8 @@ namespace CheatTool
                 long block = tempx % exSize;
                 block /= BlockSize;
                 string location = "(" + extent.ToString() + "," + block.ToString() + "," + offset.ToString() + ")";
-                string[] result = { x.ToString(), BlockSize.ToString(), extent.ToString(), block.ToString(), offset.ToString(), location };
+                string[] result = { textBox1.Text + cbxExX.Text, txtExBlockSize.Text + cbxExBlockSize.Text,
+                    extent.ToString(), block.ToString(), offset.ToString(), location };
                 ListViewItem item = new ListViewItem(result);
                 History.Items.Add(item);
             }
