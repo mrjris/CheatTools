@@ -76,7 +76,8 @@ namespace CheatTool
 
             if (x > FileLength || x < 0)
             {
-                string[] result = { x.ToString(), BlockSize.ToString(), "N/A", "N/A", "N/A", "error" };
+                string[] result = { txtX.Text + " " + cbxX.Text, txtBlockSize.Text + " " + cbxBlockSize.Text,
+                    "N/A", "N/A", "N/A", "error" };
                 ListViewItem item = new ListViewItem(result);
                 History.Items.Add(item);
             }
@@ -85,7 +86,7 @@ namespace CheatTool
                 long offset = x % BlockSize;
                 long block = x / BlockSize;
                 string location = "(" + block.ToString() + "," + offset.ToString() + ")";
-                string[] result = { txtX.Text + cbxX.Text, txtBlockSize.Text + cbxBlockSize.Text,
+                string[] result = { txtX.Text +" "+ cbxX.Text, txtBlockSize.Text +" "+ cbxBlockSize.Text,
                     "N/A", block.ToString(), offset.ToString(), location };
                 ListViewItem item = new ListViewItem(result);
                 History.Items.Add(item);
@@ -114,7 +115,8 @@ namespace CheatTool
 
             if (x > FileLength || x < 0)
             {
-                string[] result = { x.ToString(), BlockSize.ToString(), "N/A", "N/A", "N/A", "error" };
+                string[] result = { textBox1.Text +" "+ cbxExX.Text, txtExBlockSize.Text + " " + cbxExBlockSize.Text,
+                    "N/A", "N/A", "N/A", "error" };
                 ListViewItem item = new ListViewItem(result);
                 History.Items.Add(item);
             }
@@ -128,12 +130,24 @@ namespace CheatTool
                 long block = tempx % exSize;
                 block /= BlockSize;
                 string location = "(" + extent.ToString() + "," + block.ToString() + "," + offset.ToString() + ")";
-                string[] result = { textBox1.Text + cbxExX.Text, txtExBlockSize.Text + cbxExBlockSize.Text,
+                string[] result = { textBox1.Text +" "+ cbxExX.Text, txtExBlockSize.Text +" "+ cbxExBlockSize.Text,
                     extent.ToString(), block.ToString(), offset.ToString(), location };
                 ListViewItem item = new ListViewItem(result);
                 History.Items.Add(item);
             }
 
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            btnExStart_Click(sender, e);
+        }
+
+        private void txtX_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnStart_Click(sender, e);
         }
     }
 }

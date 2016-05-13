@@ -117,7 +117,7 @@ namespace CheatTool
 
         private void button2_Click(object sender, EventArgs e)
         {
-            More(button2);
+            (new frmLinkList()).Show();
         }
     }
 }

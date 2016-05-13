@@ -78,7 +78,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(935, 183);
+            this.groupBox1.Size = new System.Drawing.Size(790, 183);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Calculator";
@@ -98,9 +98,9 @@
             this.groupBox4.Controls.Add(this.txtExCount);
             this.groupBox4.Controls.Add(this.txtExFileLength);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(413, 16);
+            this.groupBox4.Location = new System.Drawing.Point(390, 16);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(519, 164);
+            this.groupBox4.Size = new System.Drawing.Size(397, 164);
             this.groupBox4.TabIndex = 102;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Extent Block";
@@ -110,7 +110,7 @@
             this.btnExStart.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnExStart.Location = new System.Drawing.Point(3, 138);
             this.btnExStart.Name = "btnExStart";
-            this.btnExStart.Size = new System.Drawing.Size(513, 23);
+            this.btnExStart.Size = new System.Drawing.Size(391, 23);
             this.btnExStart.TabIndex = 100;
             this.btnExStart.Text = "Start";
             this.btnExStart.UseVisualStyleBackColor = true;
@@ -133,6 +133,7 @@
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "2";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // cbxExFileLength
             // 
@@ -252,7 +253,7 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox3.Location = new System.Drawing.Point(3, 16);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(410, 164);
+            this.groupBox3.Size = new System.Drawing.Size(387, 164);
             this.groupBox3.TabIndex = 101;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Block";
@@ -276,13 +277,14 @@
             this.txtX.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.toolTip1.SetToolTip(this.txtX, "Nếu đề không cho đơn vị x là KB hay MB thì mặc định là B.\r\nKhi nhập, nhớ điều chỉ" +
         "nh.");
+            this.txtX.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtX_KeyDown);
             // 
             // btnStart
             // 
             this.btnStart.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnStart.Location = new System.Drawing.Point(3, 138);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(404, 23);
+            this.btnStart.Size = new System.Drawing.Size(381, 23);
             this.btnStart.TabIndex = 100;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -394,7 +396,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 183);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(935, 312);
+            this.groupBox2.Size = new System.Drawing.Size(790, 312);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "History";
@@ -411,7 +413,8 @@
             this.History.Dock = System.Windows.Forms.DockStyle.Fill;
             this.History.Location = new System.Drawing.Point(3, 16);
             this.History.Name = "History";
-            this.History.Size = new System.Drawing.Size(929, 293);
+            this.History.Size = new System.Drawing.Size(784, 293);
+            this.History.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.History.TabIndex = 0;
             this.History.UseCompatibleStateImageBehavior = false;
             this.History.View = System.Windows.Forms.View.Details;
@@ -448,7 +451,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(935, 495);
+            this.ClientSize = new System.Drawing.Size(790, 495);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmAllocation1";
