@@ -112,12 +112,17 @@ namespace CheatTool
 
         private void button3_Click(object sender, EventArgs e)
         {
-            More(button3);
+            (new frmUNIXsystemAllocation()).Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             (new frmLinkList()).Show();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.facebook.com/Mr.Jris");
         }
     }
 }
