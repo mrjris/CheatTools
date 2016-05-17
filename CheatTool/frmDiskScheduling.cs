@@ -39,6 +39,77 @@ namespace CheatTool
         private void buttonStart_Click(object sender, EventArgs e)
         {
             readData();
+            switch (algorithm)
+            {
+                case 1:
+                    FCFS();
+                    break;
+                case 2:
+                    SSTF();
+                    break;
+            }
+            
+        }
+        Stack<int> sleft = new Stack<int>();
+        Stack<int> sright = new Stack<int>();
+        private void SSTF()
+        {
+            int result = 0;
+            int[] work = new int[queue.Length];
+            int ihead = head;
+            Array.Sort(queue);
+            
+            for (int i = 0; i < queue.Length; i++)
+                if (queue[i] < head) sleft.Push(queue[i]);
+            
+            for (int i = queue.Length - 1; i > 0; i--)
+                if (queue[i] > head) sright.Push(queue[i]);
+
+            for (int i = 0; i < queue.Length; i++)
+            {
+                work[i] = findNextSSTF(ihead);
+                ihead = work[i];
+            }
+
+            result = calculate(work);
+            txtResult.Text = result.ToString();
+            foreach (int x in work)
+                txtHistory.Text += x.ToString() + "\r\n";
+        }
+
+        private int findNextSSTF(int ihead)
+        {
+            if (sleft.Count == 0) return sright.Pop();
+            if (sright.Count == 0) return sleft.Pop();
+
+            if ((ihead - sleft.Peek()) > (sright.Peek() - ihead))
+            {
+                return sright.Pop();
+            }
+            else
+            {
+                return sleft.Pop();
+            }
+            return 0;
+        }
+
+        public void FCFS()
+        {
+            int result = calculate(queue);
+            txtResult.Text = result.ToString();
+        }
+
+        private int calculate(int[] queue)
+        {
+            int[] work = queue;
+            int sum = 0;
+            int ihead = head;
+            for (int i = 0; i < work.Length; i++)
+            {
+                sum += Math.Abs(ihead - work[i]);
+                ihead = work[i];
+            }
+            return sum;
         }
 
         private void readData()
@@ -50,8 +121,7 @@ namespace CheatTool
             int i = 0;
             foreach (string word in words)
                 queue[i++] = Convert.ToInt32(word);
-            foreach (int x in queue)
-                txtHistory.Text += x.ToString() + "\r\n";
+            
             count = Convert.ToInt32(txtCount.Text);
             head = Convert.ToInt32(txtHead.Text);
         }
