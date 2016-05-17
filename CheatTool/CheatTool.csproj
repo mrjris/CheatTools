@@ -95,6 +95,12 @@
     <Compile Include="frmAllocation1.Designer.cs">
       <DependentUpon>frmAllocation1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDiskScheduling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDiskScheduling.Designer.cs">
+      <DependentUpon>frmDiskScheduling.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLinkList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAllocation1.resx">
       <DependentUpon>frmAllocation1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDiskScheduling.resx">
+      <DependentUpon>frmDiskScheduling.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLinkList.resx">
       <DependentUpon>frmLinkList.cs</DependentUpon>
