@@ -47,9 +47,29 @@ namespace CheatTool
                 case 2:
                     SSTF();
                     break;
+                case 3:
+                    Scan();
+                    break;
             }
             
         }
+
+        private void Scan()
+        {
+            int result = 0;
+            int[] work = new int[queue.Length + 2];
+            int ihead = head;
+            Array.Sort(queue);
+            if (right)
+            {
+                result = count - 1 - head + count - 1 - queue[0];
+            }else
+                result = count - 1 - head + count - 1 - queue[queue.Length -1];
+
+            txtResult.Text = result.ToString();
+
+        }
+
         Stack<int> sleft = new Stack<int>();
         Stack<int> sright = new Stack<int>();
         private void SSTF()
