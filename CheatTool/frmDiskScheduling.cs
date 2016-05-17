@@ -20,7 +20,7 @@ namespace CheatTool
          * 5 ~ Look
          * 6 ~ CLook
          */
-        int algorithm = -1;
+        int algorithm = 1;
         bool right = true;
         int[] queue = new int[100];
         int count = 200;
@@ -50,21 +50,87 @@ namespace CheatTool
                 case 3:
                     Scan();
                     break;
+                case 4:
+                    CScan();
+                    break;
+                case 5:
+                    Look();
+                    break;
+                case 6:
+                    CLook();
+                    break;
+                default:
+                    MessageBox.Show("ahihi. Lỗi");
+                    break;
             }
             
+        }
+        private void CLook()
+        {
+            int result = 0;
+            Array.Sort(queue);
+            if (right)
+            {
+                int i = 0;
+                for (i = 0; i < queue.Length; i++)
+                    if (queue[i] > head) break;
+                result = 2 * queue[queue.Length-1] - head + queue[i - 1] - 2 * queue[0];
+            }
+            else
+            {
+                int i = 0;
+                for (i = queue.Length - 1; i > 0; i--)
+                    if (queue[i] < head) break;
+                result = 2 * queue[queue.Length-1] + head - queue[i + 1] - 2 * queue[0];
+            }
+
+
+            txtResult.Text = result.ToString();
+        }
+        private void Look()
+        {
+            int result = 0;
+            Array.Sort(queue);
+            if (right)
+            {
+                result = 2 * queue[queue.Length - 1] - head - queue[0];
+            }
+            else
+                result = head + queue[queue.Length - 1] - 2 * queue[0];
+
+            txtResult.Text = result.ToString();
+        }
+        private void CScan()
+        {
+            int result = 0;
+            Array.Sort(queue);
+            if (right)
+            {
+                int i = 0;
+                for (i = 0; i < queue.Length; i++)
+                    if (queue[i] > head) break;
+                result = 2 * (count - 1) - head + queue[i - 1];
+            }
+            else
+            {
+                int i = 0;
+                for (i = queue.Length-1; i >0; i--)
+                    if (queue[i] < head) break;
+                result = 2 * (count - 1) + head - queue[i + 1];
+            }
+                
+
+            txtResult.Text = result.ToString();
         }
 
         private void Scan()
         {
             int result = 0;
-            int[] work = new int[queue.Length + 2];
-            int ihead = head;
             Array.Sort(queue);
             if (right)
-            {
                 result = count - 1 - head + count - 1 - queue[0];
-            }else
-                result = count - 1 - head + count - 1 - queue[queue.Length -1];
+            else
+                result = head + queue[queue.Length -1];
 
             txtResult.Text = result.ToString();
 
@@ -92,9 +158,7 @@ namespace CheatTool
             }
 
             result = calculate(work);
-            txtResult.Text = result.ToString();
-            foreach (int x in work)
-                txtHistory.Text += x.ToString() + "\r\n";
+            txtResult.Text = result.ToString();           
         }
 
         private int findNextSSTF(int ihead)
