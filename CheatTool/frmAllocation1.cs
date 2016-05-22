@@ -39,8 +39,8 @@ namespace CheatTool
         {
             if (txtFileLength.Text != "" && txtBlockSize.Text != "")
             {
-                long FileLength = Convert.ToInt64(txtFileLength.Text) * (int)hash[cbxFileLength.Text];
-                long BlockSize = Convert.ToInt64(txtBlockSize.Text) * (int)hash[cbxBlockSize.Text];
+                long FileLength = (long)(Convert.ToDouble(txtFileLength.Text) * (int)hash[cbxFileLength.Text]);
+                long BlockSize = (long)(Convert.ToDouble(txtBlockSize.Text) * (int)hash[cbxBlockSize.Text]);
                 long blocks = FileLength / BlockSize;
 
                 txtBlocks.Text = blocks.ToString();
@@ -51,8 +51,8 @@ namespace CheatTool
         {
             if (txtFileLength.Text != "" && txtBlockSize.Text != "")
             {
-                long FileLength = Convert.ToInt64(txtFileLength.Text) * (int)hash[cbxFileLength.Text];
-                long BlockSize = Convert.ToInt64(txtBlockSize.Text) * (int)hash[cbxBlockSize.Text];
+                long FileLength = (long)(Convert.ToDouble(txtFileLength.Text) * (int)hash[cbxFileLength.Text]);
+                long BlockSize = (long)(Convert.ToDouble(txtBlockSize.Text) * (int)hash[cbxBlockSize.Text]);
                 long blocks = FileLength / BlockSize;
 
                 txtBlocks.Text = blocks.ToString();
