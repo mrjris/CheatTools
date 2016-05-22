@@ -91,15 +91,6 @@ namespace CheatTool
                 }
                 
 
-
-
-
-
-
-
-
-
-
                 string location = "(" + block.ToString() + "," + offset.ToString() + ")";
                 string[] result = { txtX.Text +" "+ cbxX.Text, Type,
                     b2.ToString(), b1.ToString(), block.ToString(), offset.ToString(), location };

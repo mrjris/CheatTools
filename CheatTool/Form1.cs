@@ -102,7 +102,7 @@ namespace CheatTool
 
         private void button5_Click(object sender, EventArgs e)
         {
-            More(button5);
+            (new frmAllocation()).Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
